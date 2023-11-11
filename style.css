@@ -1,230 +1,215 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #top-header {
-    background: linear-gradient(to right, #3498DB, #1C2833);
-    height: 100px;
-    max-width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  background: linear-gradient(to right, #3498db, #1c2833);
+  height: 100px;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #top-header h1 {
-    font-size: 36px;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: lighter;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-family: 'Titillium Web', sans-serif;
+  font-size: 36px;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .search-card {
-    position: fixed;
-    top: 125px;
-    left: 25px;
-    width: 350px;
-    z-index: 1;
+  position: fixed;
+  top: 125px;
+  left: 25px;
+  width: 350px;
+  z-index: 1;
 }
 
 .card-header {
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    margin-left: 10px;
-    color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  margin-left: 10px;
+  color: white;
 }
 
 #btn {
-    background-color: white;
-    color: black;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-left: 20px;
-    margin-top: -5px;
+  background-color: white;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: -5px;
 }
 
 .btn:hover {
-    background-color: #CACFD2;
+  background-color: #cacfd2;
 }
 
 .navbar {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    top: 100px;
-    left: 0;
-    height: 100%;
-    width: 350px;
-    z-index: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  left: 0;
+  height: 100%;
+  width: 350px;
+  z-index: 0;
 }
 
 .custom-bg-color {
-    background-color: #1C2833;
+  background-color: #1c2833;
 }
 
 .navbar-brand {
-    padding: 10px;
-    text-align: center;
-    width: 100%;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .navbar-brand img {
-    width: 30px;
-    height: 24px;
-    display: block;
-    margin: 0 auto;
+  width: 30px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
 }
 
 #hero {
-    background-color: #3498DB;
-    height: 360px;
-    width: 100%;
-    margin:0;
-    position: fixed;
-    z-index: -1;
+  background-color: #3498db;
+  height: 360px;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 #forecastBackground {
-    background-color:gray;
-    height: 430px;
-    width: 100%;
-    top:460px;
-    margin:0;
-    position: fixed;
-    z-index: -1;
+  background-color: gray;
+  height: 430px;
+  width: 100%;
+  top: 460px;
+  margin: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 #result {
-   position: relative;
+  position: relative;
 }
 
 #result h2 {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-weight: 500;
-    position: absolute;
-    top:25%;
-    left:44%;
-    
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 500;
+  position: absolute;
+  top: 25%;
+  left: 44%;
 }
 
 #forecastcityName {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-weight: 500;
-    position: absolute;
-    top:-80px;
-    left:44%;
-    width:600px;
-
-}  
-
-
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 500;
+  position: absolute;
+  top: -80px;
+  left: 44%;
+  width: 900px;
+}
 
 #currentHumidity {
-    left: 25%;
-   top:50px;
-    position: absolute;
-    font-size: 32px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
+  left: 25%;
+  top: 50px;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
 }
 
 #currentTemperature {
-    left: 25%;
-   top:125px;
-    position: absolute;
-    font-size: 32px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
+  left: 25%;
+  top: 125px;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
 }
 
 #feelsLike {
-    left: 27%;
-   top:170px;
-    position: absolute;
-    font-size: 20px;
-    color: white;
-    font-style: italic;
+  left: 27%;
+  top: 170px;
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  font-style: italic;
 }
 
 #currentWind {
-    left: 25%;
-   top:225px;
-    position: absolute;
-    font-size: 32px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
-
-   
+  left: 25%;
+  top: 225px;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
 }
 
 #sunsetTime {
-    left: 75%;
-   top:50px;
-    position: absolute;
-    font-size: 32px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
-    max-width: 310px;
-    text-align: center;
-
+  left: 75%;
+  top: 50px;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  max-width: 310px;
+  text-align: center;
 }
 
 #sunriseTime {
-    left: 76%;
-   top:175px;
-    position: absolute;
-    font-size: 32px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
-    max-width: 310px;
-    text-align: center;
-
+  left: 76%;
+  top: 175px;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  max-width: 310px;
+  text-align: center;
 }
 
 #descriptionCurrent {
-    top:325px;
-     position: absolute;
-     font-size: 24px;
-     color: white;
-     font-family: 'Titillium Web', sans-serif;
-     max-width: 400px;
-     text-align: center;
-     font-style: italic;
+  top: 325px;
+  left:900px;
+  position: absolute;
+  font-size: 24px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  max-width: 800px;
+  text-align: center;
+  font-style: italic;
+}
 
- 
- }
-
- #centerScreen {
-    display: flex;
-    justify-content: center;
- }
-
-
-
-
+#centerScreen {
+  display: flex;
+  justify-content: center;
+}
 
 #titles {
-    max-width: 400px;
-    text-align: center;
+  max-width: 400px;
+  text-align: center;
 }
 
 #titles p {
-    font-size: 24px;
-    font-family: 'Titillium Web', sans-serif;
-    color: white;
+  font-size: 24px;
+  font-family: "Titillium Web", sans-serif;
+  color: white;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-/* The float: left; property for #currentHumidity will make it float to the left within its container, and it should be displayed on the left side of the div. */
 
-
-
-
-
-
+.forecastContainer:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
