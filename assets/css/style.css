@@ -88,7 +88,7 @@ body {
 }
 
 #forecastBackground {
-  background-color: #616A6B ;
+  background-color: #616a6b;
   height: 430px;
   width: 100%;
   top: 460px;
@@ -102,8 +102,6 @@ body {
 }
 
 #result h2 {
-  font-family: "Poppins", sans-serif;
-  color: white;
   font-weight: 500;
   position: absolute;
   top: 25%;
@@ -111,8 +109,6 @@ body {
 }
 
 #forecastcityName {
-  font-family: "Poppins", sans-serif;
-  color: white;
   font-weight: 500;
   position: absolute;
   top: -80px;
@@ -120,22 +116,30 @@ body {
   width: 900px;
 }
 
-#currentHumidity {
-  left: 25%;
-  top: 50px;
+#result h2,
+#forecastcityName {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+#currentHumidity,
+#currentTemperature,
+#currentWind,
+#sunsetTime,
+#sunriseTime {
   position: absolute;
   font-size: 32px;
   color: white;
   font-family: "Titillium Web", sans-serif;
 }
+#currentHumidity {
+  left: 25%;
+  top: 50px;
+}
 
 #currentTemperature {
   left: 25%;
   top: 125px;
-  position: absolute;
-  font-size: 32px;
-  color: white;
-  font-family: "Titillium Web", sans-serif;
 }
 
 #feelsLike {
@@ -150,19 +154,11 @@ body {
 #currentWind {
   left: 25%;
   top: 225px;
-  position: absolute;
-  font-size: 32px;
-  color: white;
-  font-family: "Titillium Web", sans-serif;
 }
 
 #sunsetTime {
   left: 75%;
   top: 50px;
-  position: absolute;
-  font-size: 32px;
-  color: white;
-  font-family: "Titillium Web", sans-serif;
   max-width: 310px;
   text-align: center;
 }
@@ -170,17 +166,13 @@ body {
 #sunriseTime {
   left: 76%;
   top: 175px;
-  position: absolute;
-  font-size: 32px;
-  color: white;
-  font-family: "Titillium Web", sans-serif;
   max-width: 310px;
   text-align: center;
 }
 
 #descriptionCurrent {
   top: 315px;
-  left:900px;
+  left: 900px;
   position: absolute;
   font-size: 24px;
   color: white;
@@ -215,27 +207,20 @@ ul {
   width: 1920px;
   height: 790px;
   position: fixed;
-
+}
+#homepageBackground h1,
+#homepageBackground h2 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  position: absolute;
+  font-size: 125px;
 }
 #homepageBackground h1 {
-  position: absolute;
   top: 200px;
   left: 400px;
-  font-size: 125px;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  text-align: center;
 }
-
 #homepageBackground h2 {
-  position: absolute;
   top: 600px;
   left: 930px;
-  font-size: 125px;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  text-align: center;
 }
-
-
-

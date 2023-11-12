@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const forecastTitle = document.getElementById("forecastcityName");
   const listContainer = document.getElementById("cityStorage");
 
-  displaySavedLocations ();
+  displaySavedLocations();
 
   searchButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -24,17 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var apiKey = "a1c24f9ef9bb705299a22d8524be3474";
 
     const location = locationInput.value;
-    
 
-    if (!location || !isNaN(location)) { //!isNaN means if the input is numbers fire the alert
-    alert ("Invalid Location")
+    if (!location || !isNaN(location)) {
+      //!isNaN means if the input is numbers fire the alert
+      alert("Invalid Location");
     } else {
       saveLocationToLocalStorage(location);
     }
     clearForecast();
     clearIcons();
-    backgroundClear ();
-    
+    backgroundClear();
+
     allData(location, apiKey);
   });
 
@@ -294,7 +294,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displaySavedLocations() {
-    let savedLocations = JSON.parse(localStorage.getItem("savedLocations")) || [];
+    let savedLocations =
+      JSON.parse(localStorage.getItem("savedLocations")) || [];
 
     listContainer.innerHTML = "";
 
@@ -344,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
         handleLocationClick(savedLocations[i]);
         clearForecast();
         clearIcons();
-        backgroundClear ();
+        backgroundClear();
       });
 
       ulElement.appendChild(liElement);
@@ -394,8 +395,8 @@ function clearIcons() {
   }
 }
 
-function backgroundClear () {
-  const background = document.getElementById("homepageBackground")
+function backgroundClear() {
+  const background = document.getElementById("homepageBackground");
 
-  background.style.display = 'none';
+  background.style.display = "none";
 }
