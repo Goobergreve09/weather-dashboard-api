@@ -15,15 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionCurrent = document.getElementById("descriptionCurrent");
   const forecastTitle = document.getElementById("forecastcityName");
   const listContainer = document.getElementById("cityStorage");
-  saveLocationToLocalStorage(location);
+
+  displaySavedLocations ();
+
   searchButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     var apiKey = "a1c24f9ef9bb705299a22d8524be3474";
 
     const location = locationInput.value;
+    
+
+    if (!location || !isNaN(location)) { //!isNaN means if the input is numbers fire the alert
+    alert ("Invalid Location")
+    } else {
+      saveLocationToLocalStorage(location);
+    }
     clearForecast();
     clearIcons();
+    backgroundClear ();
     
     allData(location, apiKey);
   });
@@ -270,24 +280,35 @@ document.addEventListener("DOMContentLoaded", function () {
   function saveLocationToLocalStorage(location) {
     let savedLocations =
       JSON.parse(localStorage.getItem("savedLocations")) || [];
-    savedLocations.push({ location });
+
+    // Add the new location to the beginning of the array
+    savedLocations.unshift({ location });
+
+    // Limit the array to 10 elements
+    savedLocations = savedLocations.slice(0, 10);
 
     localStorage.setItem("savedLocations", JSON.stringify(savedLocations));
 
+    // After saving, re-render the saved locations
+    displaySavedLocations();
+  }
+
+  function displaySavedLocations() {
+    let savedLocations = JSON.parse(localStorage.getItem("savedLocations")) || [];
+
     listContainer.innerHTML = "";
 
-    const recentSearches = document.createElement ("h3");
+    const recentSearches = document.createElement("h3");
     recentSearches.textContent = "Recent Searches:";
-    recentSearches.style.color = 'white';
-    recentSearches.style.position = 'absolute';
-    recentSearches.style.bottom ='750px';
-    recentSearches.style.fontSize = '24px';
+    recentSearches.style.color = "white";
+    recentSearches.style.position = "absolute";
+    recentSearches.style.bottom = "750px";
+    recentSearches.style.fontSize = "24px";
     recentSearches.style.fontFamily = "Poppins, sans-serif";
-    recentSearches.style.left= '70px';
+    recentSearches.style.left = "70px";
 
     const ulElement = document.createElement("ul");
 
-   
     ulElement.style.marginRight = "25px";
 
     for (let i = 0; i < savedLocations.length; i++) {
@@ -298,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
       liElement.textContent =
         typeof savedLocations[i].location === "string"
           ? savedLocations[i].location.toUpperCase()
-          : "Invalid Location"; // handles error for invalid locations is local storage
+          : "Invalid Location"; // handles error for invalid locations in local storage
       liElement.style.color = "white";
       liElement.style.backgroundColor = "#616A6B";
       liElement.style.marginBottom = "25px";
@@ -314,7 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
         liElement.style.cursor = "pointer";
       });
 
-      // Reset background color on mouseout
       liElement.addEventListener("mouseout", function () {
         liElement.style.backgroundColor = "#616A6B";
         liElement.style.fontWeight = "normal";
@@ -324,6 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
         handleLocationClick(savedLocations[i]);
         clearForecast();
         clearIcons();
+        backgroundClear ();
       });
 
       ulElement.appendChild(liElement);
@@ -371,4 +392,10 @@ function clearIcons() {
   while (iconContainer.firstChild) {
     iconContainer.removeChild(iconContainer.firstChild);
   }
+}
+
+function backgroundClear () {
+  const background = document.getElementById("homepageBackground")
+
+  background.style.display = 'none';
 }

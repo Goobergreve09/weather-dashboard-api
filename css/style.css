@@ -210,4 +210,32 @@ ul {
   list-style-type: none;
 }
 
+#homepageBackground img {
+  z-index: -1;
+  width: 1920px;
+  height: 790px;
+  position: fixed;
+
+}
+#homepageBackground h1 {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  font-size: 125px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#homepageBackground h2 {
+  position: absolute;
+  top: 600px;
+  left: 930px;
+  font-size: 125px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+
 
