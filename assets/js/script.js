@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let fiveDays = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
         for (let i = 0; i < fiveDays.length; i++) {
+          console.log(`Processing Day ${i + 1}`);
           if (fiveDays[i] && fiveDays[i].dt) {
             const dtValue = fiveDays[i].dt * 1000;
             const forecastDates = dayjs(dtValue).format("MM/DD");
@@ -383,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error:", error);
       });
 
-    getforecastData(location, apiKey);
+ 
     allData(location, apiKey);
   }
 });
