@@ -84,10 +84,11 @@ body {
   margin: 0;
   position: fixed;
   z-index: -1;
+  border-bottom: 5px solid white;
 }
 
 #forecastBackground {
-  background-color: gray;
+  background-color: #616A6B ;
   height: 430px;
   width: 100%;
   top: 460px;
@@ -178,7 +179,7 @@ body {
 }
 
 #descriptionCurrent {
-  top: 325px;
+  top: 315px;
   left:900px;
   position: absolute;
   font-size: 24px;
@@ -209,7 +210,4 @@ ul {
   list-style-type: none;
 }
 
-.forecastContainer:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
+
