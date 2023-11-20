@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
     allData(location, apiKey);
   });
 
-  input.addEventListener("keyup", function(event) {
+  input.addEventListener("keyup", function (event) {
     // 13 is the keycode for the Enter key
     if (event.keyCode === 13) {
-        // Trigger a click event on the button
-        search.click();
+      // Trigger a click event on the button
+      search.click();
     }
-});
+  });
 
   function allData(location, apiKey) {
     const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q='${location}'&limit=50&appid=${apiKey}`;
@@ -100,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.style.left = "50%";
         icon.style.width = "250px";
         iconContainer.appendChild(icon);
+
+        changeIcon(icon, imgCode);
       })
       .catch(function (error) {
         console.error("Error:", error);
@@ -168,10 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     const divEl = document.createElement("div");
     divEl.className = "forecastContainer";
-    divEl.style.backgroundSize = "cover"; 
+    divEl.style.backgroundSize = "cover";
     divEl.style.backgroundRepeat = "no-repeat";
     divEl.style.backgroundPosition = "center";
-
 
     const h3El = document.createElement("h3");
     const imgEl = document.createElement("img");
@@ -217,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(divEl);
 
     cardAttributes(divEl, h3El, ulEl, pEl, index);
-    ifskiesShow(forecastIcon, pEl, descriptionCurrent,divEl);
+    ifskiesShow(forecastIcon, pEl, descriptionCurrent, divEl, imgEl);
   }
 
   function cardAttributes(divEl, h3El, ulEl, pEl, index) {
@@ -231,24 +232,24 @@ document.addEventListener("DOMContentLoaded", function () {
     divEl.style.boxShadow = "5px 10px 10px rgba(1, 0.5, 0.5, 0.8)";
     divEl.style.display = "flex";
     divEl.style.justifyContent = "center";
-    divEl.style.border = '3px solid white';
+    divEl.style.border = "3px solid white";
 
     h3El.style.color = "white";
     h3El.style.position = "absolute";
     h3El.style.top = "20px";
     h3El.style.fontFamily = "Titillium Web, sans-serif";
-    h3El.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';; 
-    h3El.style.width = '175px';
-    h3El.style.padding = '5px';
-    h3El.style.borderRadius = '10px';
-    h3El.style.textAlign = 'center';
+    h3El.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    h3El.style.width = "175px";
+    h3El.style.padding = "5px";
+    h3El.style.borderRadius = "10px";
+    h3El.style.textAlign = "center";
 
     ulEl.style.position = "absolute";
     ulEl.style.top = "75px";
-    ulEl.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';; 
-   ulEl.style.width = '175px';
-    ulEl.style.padding = '5px';
-    ulEl.style.borderRadius = '10px';
+    ulEl.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    ulEl.style.width = "175px";
+    ulEl.style.padding = "5px";
+    ulEl.style.borderRadius = "10px";
 
     pEl.style.fontsize = "50px";
     pEl.style.position = "absolute";
@@ -257,74 +258,105 @@ document.addEventListener("DOMContentLoaded", function () {
     pEl.style.fontStyle = "italic";
     pEl.style.top = "80%";
     pEl.style.textAlign = "center";
-    pEl.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';; 
-    pEl.style.width = '175px';
-    pEl.style.padding = '5px';
-    pEl.style.borderRadius = '10px';
+    pEl.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    pEl.style.width = "175px";
+    pEl.style.padding = "5px";
+    pEl.style.borderRadius = "10px";
   }
 
-  function ifskiesShow(forecastIcon, pEl, descriptionCurrent, divEl) {
-    const heroBackground = document.getElementById('hero');
-    heroBackground.style.backgroundSize = "cover"; 
+  function ifskiesShow(forecastIcon, pEl, descriptionCurrent, divEl, imgEl) {
+    const heroBackground = document.getElementById("hero");
+    heroBackground.style.backgroundSize = "cover";
     heroBackground.style.backgroundRepeat = "no-repeat";
     heroBackground.style.backgroundPosition = "center";
+
     if (forecastIcon === "13d" || forecastIcon === "13n") {
       pEl.textContent = "// Expect sleet or snow";
       descriptionCurrent.textContent =
         "// Expect sleet or snow precipitation today.";
-        divEl.style.backgroundImage = 'url("assets/images/iceBckground.jpg")';
-        heroBackground.style.backgroundImage = 'url("assets/images/iceBckground.jpg")';
+      divEl.style.backgroundImage = 'url("assets/images/iceBckground.jpg")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/iceBckground.jpg")';
 
+      imgEl.setAttribute("src", "assets/images/snowIcon.png");
+      imgEl.style.width = "25px";
+      imgEl.style.top = "25px";
+      imgEl.style.left = "35px";
     } else if (forecastIcon === "11d" || forecastIcon === "11n") {
       pEl.textContent = "// Thunderstorm incoming!";
       descriptionCurrent.textContent =
         "// Thunderstorm warning! Enjoy the show!";
-        divEl.style.backgroundImage = 'url("assets/images/thunderStorm.jpg")';
-        heroBackground.style.backgroundImage = 'url("assets/images/thunderStorm.jpg")';
-
+      divEl.style.backgroundImage = 'url("assets/images/thunderStorm.webp")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/thunderStorm.webp")';
     } else if (forecastIcon === "09d" || forecastIcon === "09n") {
       pEl.textContent = "// Expect a drizzle";
       descriptionCurrent.textContent = "// There is a bit of a drizzle today.";
       divEl.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
-      heroBackground.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/rainCity.jpg")';
 
+      imgEl.setAttribute("src", "assets/images/rainIcon.png");
+
+      imgEl.style.top = "15px";
     } else if (forecastIcon === "10d" || forecastIcon === "10n") {
       pEl.textContent = "// Heavy Rain Showers";
       descriptionCurrent.textContent =
         "// Heavy Rain Showers Today - Bring an umbrella!";
-        divEl.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
-        heroBackground.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+      divEl.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/rainCity.jpg")';
 
+      imgEl.setAttribute("src", "assets/images/rainIcon.png");
+
+      imgEl.style.top = "15px";
     } else if (forecastIcon === "50d" || forecastIcon === "50n") {
       pEl.textContent = "Visibility low";
       divEl.style.backgroundImage = 'url("assets/images/foggy.jpg")';
       heroBackground.style.backgroundImage = 'url("assets/images/foggy.jpg")';
-      
     } else if (forecastIcon === "01d" || forecastIcon === "01n") {
       pEl.textContent = "// Clear Skies";
       descriptionCurrent.textContent = "Clear Sky Today - Enjoy the Sun!";
-      divEl.style.backgroundImage = 'url("assets/images/skyClear.webp")';
-      heroBackground.style.backgroundImage = 'url("assets/images/skyClear.webp")';
+      divEl.style.backgroundImage = 'url("assets/images/skyClear.jpg")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/skyClear.jpg")';
 
+      imgEl.setAttribute("src", "assets/images/sun.png");
+
+      imgEl.style.top = "22px";
+      imgEl.style.left = "30px";
+      imgEl.style.width = "40px";
     } else if (forecastIcon === "02d" || forecastIcon === "02n") {
       pEl.textContent = "// Expect a few clouds";
       descriptionCurrent.textContent = "// Expect a Few Clouds Today";
-      divEl.style.backgroundImage = 'url("assets/images/fewClouds.jpg")';
-      heroBackground.style.backgroundImage = 'url("assets/images/fewClouds.jpg")';
+      divEl.style.backgroundImage = 'url("assets/images/fewClouds.png")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/fewClouds.png")';
 
+      imgEl.setAttribute("src", "assets/images/fewcloudsIcon.png");
+      imgEl.style.width = "40px";
+      imgEl.style.top = "20px";
+      imgEl.style.left = "30px";
     } else if (forecastIcon === "03d" || forecastIcon === "03n") {
       pEl.textContent = "// Scattered Clouds";
       descriptionCurrent.textContent =
         "// Scattered Clouds in the Skies Today.";
-       divEl.style.backgroundImage = 'url("assets/images/Scattered.webp")';
-       heroBackground.style.backgroundImage = 'url("assets/images/Scattered.webp")';
+      divEl.style.backgroundImage = 'url("assets/images/Scattered.webp")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/Scattered.webp")';
 
+      imgEl.setAttribute("src", "assets/images/scatteredCloudicon.png");
+      imgEl.style.top = "25px";
     } else if (forecastIcon === "04d" || forecastIcon === "04n") {
       pEl.textContent = "// Overcast";
       descriptionCurrent.textContent = "// Very Cloudy and Overcast Today";
-      divEl.style.backgroundImage = 'url("assets/images/overCast.jpg")';
-      heroBackground.style.backgroundImage = 'url("assets/images/overCast.jpg")';
-     
+      divEl.style.backgroundImage = 'url("assets/images/overCast.webp")';
+      heroBackground.style.backgroundImage =
+        'url("assets/images/overCast.webp")';
+      imgEl.setAttribute("src", "assets/images/overcastIcon.webp");
+      imgEl.style.width = "40px";
+      imgEl.style.top = "25px";
+      imgEl.style.left = "30px";
     }
   }
 
@@ -441,7 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error:", error);
       });
 
- 
     allData(location, apiKey);
   }
 });
@@ -459,12 +490,52 @@ function backgroundClear() {
   background.style.display = "none";
 }
 
-function forecastBackground () {
-  const forecastBackgrounds = document.getElementById ('forecastBackground')
-  forecastBackgrounds.style.backgroundImage = 'url("assets/images/a-starry-night-wallpaper-2.jpg")';
-  forecastBackgrounds.style.backgroundSize = "cover"; 
-   forecastBackgrounds.style.backgroundRepeat = "no-repeat";
-    forecastBackgrounds.style.backgroundPosition = "center";
+function forecastBackground() {
+  const forecastBackgrounds = document.getElementById("forecastBackground");
+  forecastBackgrounds.style.backgroundImage =
+    'url("assets/images/scifi-city-scenery-artwork_3840x2160_xtrafondos.com.jpg")';
+  forecastBackgrounds.style.backgroundSize = "cover";
+  forecastBackgrounds.style.backgroundRepeat = "no-repeat";
+  forecastBackgrounds.style.backgroundPosition = "center";
 }
 
-forecastBackground ();
+forecastBackground();
+
+function changeIcon(icon, imgCode) {
+  if (imgCode === "13d" || imgCode === "13n") {
+    // Change icon for snow
+    icon.setAttribute("src", "assets/images/snowIcon.png");
+    icon.style.width = "200px";
+    icon.style.top = "65px";
+  } else if (imgCode === "11d" || imgCode === "11n") {
+    // Change icon for thunderstorm
+    icon.setAttribute("src", "assets/images/thunderstormIcon.png");
+  } else if (imgCode === "09d" || imgCode === "09n") {
+    // Change icon for drizzle
+    icon.setAttribute("src", "assets/images/rainIcon.png");
+    icon.style.width = "300px";
+  } else if (imgCode === "10d" || imgCode === "10n") {
+    // Change icon for heavy rain showers
+    icon.setAttribute("src", "assets/images/rainIcon.png");
+    icon.style.width = "300px";
+  } else if (imgCode === "50d" || imgCode === "50n") {
+    // Change icon for low visibility
+    icon.setAttribute("src", "assets/images/lowVis.png");
+    icon.style.top = "60px";
+  } else if (imgCode === "01d" || imgCode === "01n") {
+    // Change icon for clear skies
+    icon.setAttribute("src", "assets/images/sun.png");
+  } else if (imgCode === "02d" || imgCode === "02n") {
+    // Change icon for few clouds
+    icon.setAttribute("src", "assets/images/fewcloudsIcon.png");
+  } else if (imgCode === "03d" || imgCode === "03n") {
+    // Change icon for scattered clouds
+    icon.setAttribute("src", "assets/images/scatteredCloudicon.png");
+  } else if (imgCode === "04d" || imgCode === "04n") {
+    // Change icon for overcast
+    icon.setAttribute("src", "assets/images/overcastIcon.webp");
+    icon.style.top = "75px";
+  }
+}
+
+changeIcon(icon, imgCode);
