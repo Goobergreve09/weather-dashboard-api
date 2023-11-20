@@ -531,6 +531,9 @@ function changeIcon(icon, imgCode) {
   } else if (imgCode === "03d" || imgCode === "03n") {
     // Change icon for scattered clouds
     icon.setAttribute("src", "assets/images/scatteredCloudicon.png");
+    icon.style.width = '500px';
+    icon.style.left = '850px';
+    icon.style.top = '75px';
   } else if (imgCode === "04d" || imgCode === "04n") {
     // Change icon for overcast
     icon.setAttribute("src", "assets/images/overcastIcon.webp");
