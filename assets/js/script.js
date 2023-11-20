@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchButton.addEventListener("click", function (event) {
     event.preventDefault();
-
     var apiKey = "a1c24f9ef9bb705299a22d8524be3474";
 
     const location = locationInput.value;
@@ -169,6 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     const divEl = document.createElement("div");
     divEl.className = "forecastContainer";
+    divEl.style.backgroundSize = "cover"; 
+    divEl.style.backgroundRepeat = "no-repeat";
+    divEl.style.backgroundPosition = "center";
+
+
     const h3El = document.createElement("h3");
     const imgEl = document.createElement("img");
     const pEl = document.createElement("p");
@@ -213,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(divEl);
 
     cardAttributes(divEl, h3El, ulEl, pEl, index);
-    ifskiesShow(forecastIcon, pEl, descriptionCurrent);
+    ifskiesShow(forecastIcon, pEl, descriptionCurrent,divEl);
   }
 
   function cardAttributes(divEl, h3El, ulEl, pEl, index) {
@@ -224,17 +228,27 @@ document.addEventListener("DOMContentLoaded", function () {
     divEl.style.position = "absolute";
     divEl.style.left = `${400 + index * 315}px`;
     divEl.style.top = "550px";
-    divEl.style.boxShadow = "5px 10px 10px rgba(1, 0.5, 0.5, 0.5)";
+    divEl.style.boxShadow = "5px 10px 10px rgba(1, 0.5, 0.5, 0.8)";
     divEl.style.display = "flex";
     divEl.style.justifyContent = "center";
+    divEl.style.border = '3px solid white';
 
     h3El.style.color = "white";
     h3El.style.position = "absolute";
     h3El.style.top = "20px";
     h3El.style.fontFamily = "Titillium Web, sans-serif";
+    h3El.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';; 
+    h3El.style.width = '175px';
+    h3El.style.padding = '5px';
+    h3El.style.borderRadius = '10px';
+    h3El.style.textAlign = 'center';
 
     ulEl.style.position = "absolute";
-    ulEl.style.top = "65px";
+    ulEl.style.top = "75px";
+    ulEl.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';; 
+   ulEl.style.width = '175px';
+    ulEl.style.padding = '5px';
+    ulEl.style.borderRadius = '10px';
 
     pEl.style.fontsize = "50px";
     pEl.style.position = "absolute";
@@ -243,44 +257,79 @@ document.addEventListener("DOMContentLoaded", function () {
     pEl.style.fontStyle = "italic";
     pEl.style.top = "80%";
     pEl.style.textAlign = "center";
+    pEl.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';; 
+    pEl.style.width = '175px';
+    pEl.style.padding = '5px';
+    pEl.style.borderRadius = '10px';
   }
 
-  function ifskiesShow(forecastIcon, pEl, descriptionCurrent) {
+  function ifskiesShow(forecastIcon, pEl, descriptionCurrent, divEl) {
+    const heroBackground = document.getElementById('hero');
+    heroBackground.style.backgroundSize = "cover"; 
+    heroBackground.style.backgroundRepeat = "no-repeat";
+    heroBackground.style.backgroundPosition = "center";
     if (forecastIcon === "13d" || forecastIcon === "13n") {
       pEl.textContent = "// Expect sleet or snow";
       descriptionCurrent.textContent =
         "// Expect sleet or snow precipitation today.";
+        divEl.style.backgroundImage = 'url("assets/images/iceBckground.jpg")';
+        heroBackground.style.backgroundImage = 'url("assets/images/iceBckground.jpg")';
+
     } else if (forecastIcon === "11d" || forecastIcon === "11n") {
       pEl.textContent = "// Thunderstorm incoming!";
       descriptionCurrent.textContent =
         "// Thunderstorm warning! Enjoy the show!";
+        divEl.style.backgroundImage = 'url("assets/images/thunderStorm.jpg")';
+        heroBackground.style.backgroundImage = 'url("assets/images/thunderStorm.jpg")';
+
     } else if (forecastIcon === "09d" || forecastIcon === "09n") {
       pEl.textContent = "// Expect a drizzle";
       descriptionCurrent.textContent = "// There is a bit of a drizzle today.";
+      divEl.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+      heroBackground.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+
     } else if (forecastIcon === "10d" || forecastIcon === "10n") {
       pEl.textContent = "// Heavy Rain Showers";
       descriptionCurrent.textContent =
         "// Heavy Rain Showers Today - Bring an umbrella!";
+        divEl.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+        heroBackground.style.backgroundImage = 'url("assets/images/rainCity.jpg")';
+
     } else if (forecastIcon === "50d" || forecastIcon === "50n") {
       pEl.textContent = "Visibility low";
+      divEl.style.backgroundImage = 'url("assets/images/foggy.jpg")';
+      heroBackground.style.backgroundImage = 'url("assets/images/foggy.jpg")';
+      
     } else if (forecastIcon === "01d" || forecastIcon === "01n") {
       pEl.textContent = "// Clear Skies";
       descriptionCurrent.textContent = "Clear Sky Today - Enjoy the Sun!";
+      divEl.style.backgroundImage = 'url("assets/images/skyClear.webp")';
+      heroBackground.style.backgroundImage = 'url("assets/images/skyClear.webp")';
+
     } else if (forecastIcon === "02d" || forecastIcon === "02n") {
       pEl.textContent = "// Expect a few clouds";
       descriptionCurrent.textContent = "// Expect a Few Clouds Today";
+      divEl.style.backgroundImage = 'url("assets/images/fewClouds.jpg")';
+      heroBackground.style.backgroundImage = 'url("assets/images/fewClouds.jpg")';
+
     } else if (forecastIcon === "03d" || forecastIcon === "03n") {
       pEl.textContent = "// Scattered Clouds";
       descriptionCurrent.textContent =
         "// Scattered Clouds in the Skies Today.";
+       divEl.style.backgroundImage = 'url("assets/images/Scattered.webp")';
+       heroBackground.style.backgroundImage = 'url("assets/images/Scattered.webp")';
+
     } else if (forecastIcon === "04d" || forecastIcon === "04n") {
       pEl.textContent = "// Overcast";
       descriptionCurrent.textContent = "// Very Cloudy and Overcast Today";
+      divEl.style.backgroundImage = 'url("assets/images/overCast.jpg")';
+      heroBackground.style.backgroundImage = 'url("assets/images/overCast.jpg")';
+     
     }
   }
 
   function clearForecast() {
-    var forecastContainers = document.querySelectorAll(".forecastContainer");
+    let forecastContainers = document.querySelectorAll(".forecastContainer");
     forecastContainers.forEach(function (container) {
       container.remove();
     });
@@ -409,3 +458,13 @@ function backgroundClear() {
 
   background.style.display = "none";
 }
+
+function forecastBackground () {
+  const forecastBackgrounds = document.getElementById ('forecastBackground')
+  forecastBackgrounds.style.backgroundImage = 'url("assets/images/a-starry-night-wallpaper-2.jpg")';
+  forecastBackgrounds.style.backgroundSize = "cover"; 
+   forecastBackgrounds.style.backgroundRepeat = "no-repeat";
+    forecastBackgrounds.style.backgroundPosition = "center";
+}
+
+forecastBackground ();
