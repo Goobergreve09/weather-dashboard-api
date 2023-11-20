@@ -89,7 +89,7 @@ body {
 
 #forecastBackground {
   background-color: #616a6b;
-  height: 430px;
+  height: 51vh;
   width: 100%;
   top: 460px;
   margin: 0;
@@ -104,7 +104,7 @@ body {
 #result h2 {
   font-weight: 500;
   position: absolute;
-  top: 25%;
+  top: 21%;
   left: 44%;
 }
 
@@ -205,7 +205,7 @@ ul {
 #homepageBackground img {
   z-index: -1;
   width: 1920px;
-  height: 790px;
+  height: 100vh;
   position: fixed;
 }
 #homepageBackground h1,

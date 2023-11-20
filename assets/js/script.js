@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
     allData(location, apiKey);
   });
 
+  input.addEventListener("keyup", function(event) {
+    // 13 is the keycode for the Enter key
+    if (event.keyCode === 13) {
+        // Trigger a click event on the button
+        search.click();
+    }
+});
+
   function allData(location, apiKey) {
     const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q='${location}'&limit=50&appid=${apiKey}`;
 
