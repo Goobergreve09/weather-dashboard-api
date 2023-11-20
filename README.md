@@ -4,7 +4,8 @@ In this challenge I created a weather dashboard. When the user types in the city
 ## Screenshots
 ![Capture1](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/0334a59d-2e0e-4456-b0a6-1dca608af736)
 
-![Capture](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/5ba0f11d-fa91-4b65-b867-658636bfa326)
+![zdfgzsdfg](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/99ca588d-8e6c-4e4d-87ee-26ed1d5be17e)
+
 
 ## Link
 
