@@ -4,8 +4,9 @@
 
   
 ## Description
+I created a weather dashboard for a user to easily find the weather of a specified city. When the user types in the city into the search bar the Current weather as well as the 5 day forecast will show for the city. The weather conditions include temperature, feels like temperature, humidity percentage, wind at miles per hour, sunset/sunrise, and a brief and unique description of the weather with an icon. The past 10 city searches for the user will be saved into local storage and can be clicked to bring up the dashboard for that respective city. There were no errors upon deployment.
 
-In this challenge I created a weather dashboard. When the user types in the city into the search bar the Current weather as well as the 5 day forecast will show for the city. The weather conditions include temperature, feels like temperature, humidity percentage, wind at miles per hour, sunset/sunrise, and a brief and unique description of the weather with an icon. The past 10 city searches for the user will be saved into local storage and can be clicked to bring up the dashboard for that respective city. There were no errors upon deployment.
+My motivation for ths application was to have a weather dashboard created by me that I can view everyday, and also view my recent city searches for easier navigation.
 
 
   
