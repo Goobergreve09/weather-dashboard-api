@@ -22,6 +22,12 @@ In this challenge I created a weather dashboard. When the user types in the city
 
 To use this application simply type in the city you are searching for into the user input bar. This will brng up the current forecast of the desired city, the 5 day forecast, and also save the searched city into recent searches using localStorage. 
 
+*Below are real time screenshots of application use.*
+
+![cleveland1](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/2e2d2e20-2e30-48c4-9ce8-be08b1b374a3)
+
+![cleveland2](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/5b382259-7ce6-49cc-a499-33f938e4b3e4)
+
 ## Contributions
 
 n/a
@@ -49,8 +55,5 @@ If you have any additional questions you can contact me by using the following:
 
  Email Address: gregory.greve@yahoo.com
  
-## Screenshots
-![Capture1](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/0334a59d-2e0e-4456-b0a6-1dca608af736)
 
-![zdfgzsdfg](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/99ca588d-8e6c-4e4d-87ee-26ed1d5be17e)
 
