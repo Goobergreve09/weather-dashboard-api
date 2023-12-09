@@ -30,7 +30,16 @@ To use this application simply type in the city you are searching for into the u
 
 ## Contributions
 
-n/a
+Special thanks to: 
+
+* [Google Fonts](https://fonts.google.com/)
+
+* [Local Storage - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+* [Weather API](https://openweathermap.org/api)
+
+* [Dayjs Formatting](https://day.js.org/docs/en/display/format)
+
 
 
 ## License
@@ -41,9 +50,6 @@ The software license selected for this application *is as follows*:
 
 [MIT](https://opensource.org/licenses/MIT)
 
-
-
-## Tests
 
 
 
