@@ -225,3 +225,157 @@ ul {
   top: 600px;
   left: 930px;
 }
+
+@media only screen and (max-width: 400px) and (min-width: 320px) {
+  #titles {
+    max-width: 100vh;
+    text-align: center;
+  }
+  #titles h1 {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
+#titles p {
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: none;
+}
+
+.search-card {
+top:-290px;
+left:150px;
+position: relative;
+}
+
+.search-card h3 {
+  font-size: 16px;
+}
+#btn {
+  width:75px;
+  margin-left:0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:10px;
+  margin-left: 50px;
+}
+
+#location {
+  width:150px;
+}
+.navbar {
+  background-color: transparent; 
+
+}
+.custom-bg-color {
+  background-color: none;
+}
+#homepageBackground img {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#homepageBackground h1,
+#homepageBackground h2 {
+  font-size: 50px;
+  position: fixed;
+}
+#homepageBackground h1 {
+  top: 150px;
+  left: 5px;
+}
+#forecastBackground {
+width: 100vw;
+height: 1775px;
+position: relative;
+background:linear-gradient(to right, #3498db, #1c2833); ;
+}
+
+#hero {
+  width:100vw;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to right, #3498db, #1c2833)
+}
+#top-header {
+  position: fixed;
+  width: 100vw;
+}
+#currentHumidity,
+#currentTemperature,
+#currentWind,
+#sunsetTime,
+#sunriseTime {
+  font-size: 18px;
+}
+
+#currentTemperature {
+  left:2%;
+  top:200px;
+}
+#feelsLike {
+  left:2%;
+  top:225px;
+}
+#currentWind {
+  left:2%;
+  top:275px;
+}
+#sunsetTime {
+  left:50%;
+  top:200px;
+}
+
+#sunriseTime {
+  left:50%;
+  top:275px;
+}
+#currentHumidity {
+  left:2%;
+  top:315px;
+}
+#descriptionCurrent {
+  top: 425px;
+  font-size: 18px;
+  text-align: center;
+ left:0px;
+ padding-left: 5px;
+
+}
+#result h2,
+#forecastcityName {
+  left:10%;
+  font-size: 24px;
+  text-align: center;
+  top:125px;
+}
+#iconContainer img {
+  width:80px !important;
+  top:340px !important;
+  left:115px !important;
+}
+
+#forecastcityName {
+  left:25px !important;
+  width: 225px !important;
+  top:-100px !important;
+
+}
+.forecastContainer {
+  width:75% !important; 
+  position: relative !important;
+  left: auto !important;
+  top: 125px !important;
+  margin-left:50px !important;
+  margin-top:25px !important;
+  z-index:-1 !important;
+}
+#cityStorage {
+display:none;
+}
+}
