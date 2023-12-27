@@ -29,6 +29,10 @@ To use this application simply type in the city you are searching for into the u
 
 ![cleveland2](https://github.com/Goobergreve09/weather-dashboard-api/assets/143923830/5b382259-7ce6-49cc-a499-33f938e4b3e4)
 
+Click 'Deployment Link' to view deployment:
+
+[Deployment Link](https://goobergreve09.github.io/weather-dashboard-api/)
+
 ## Contributions
 
 Special thanks to: 
