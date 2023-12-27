@@ -245,9 +245,12 @@ ul {
 }
 
 .search-card {
-top: -375px;
-left:175px;
+top: 0px;
+left:50px;
 position: relative;
+width:150px;
+display: flex;
+flex-direction: column;
 }
 
 .search-card h3 {
@@ -258,12 +261,13 @@ position: relative;
   margin-left:0;
   display: flex;
   flex-wrap: wrap;
-  margin-top:10px;
-  margin-left: 50px;
+  margin-top:5px;
+  margin-left: 25px;
 }
 
 #location {
-  width:150px;
+  width:125px;
+  padding: 0;
 }
 .navbar {
   background-color: transparent; 
@@ -273,7 +277,7 @@ position: relative;
   background-color: none;
 }
 #homepageBackground img {
-  width: 1000px;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -282,13 +286,20 @@ position: relative;
 }
 #homepageBackground h1,
 #homepageBackground h2 {
-  font-size: 50px;
+  font-size: 40px;
   position: fixed;
+  left:10px;
+  text-align: center;
+  max-width: 100vw;
 }
 #homepageBackground h1 {
   top: 300px;
-  left: 5px;
+  left: 0px;
 }
+#homepageBackground h2 {
+  top:385px;
+  left: 125px;
+} 
 #forecastBackground {
 width: 100vw;
 height: 1900px;
@@ -377,5 +388,8 @@ background:linear-gradient(to right, #3498db, #1c2833); ;
 }
 #cityStorage {
 display:none;
+}
+#user-form {
+  top:50px;
 }
 }
