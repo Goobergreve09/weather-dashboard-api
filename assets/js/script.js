@@ -490,6 +490,16 @@ function backgroundClear() {
   background.style.display = "none";
 }
 
+function forecastBackground() {
+  const forecastBackgrounds = document.getElementById("forecastBackground");
+  forecastBackgrounds.style.backgroundImage =
+    'url("assets/images/scifi-city-scenery-artwork_3840x2160_xtrafondos.com.jpg")';
+  forecastBackgrounds.style.backgroundSize = "cover";
+  forecastBackgrounds.style.backgroundRepeat = "no-repeat";
+  forecastBackgrounds.style.backgroundPosition = "center";
+}
+
+forecastBackground();
 
 function changeIcon(icon, imgCode) {
   if (imgCode === "13d" || imgCode === "13n") {
