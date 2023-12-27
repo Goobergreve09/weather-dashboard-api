@@ -245,8 +245,8 @@ ul {
 }
 
 .search-card {
-top:-290px;
-left:150px;
+top:-425px;
+left:175px;
 position: relative;
 }
 
@@ -273,7 +273,7 @@ position: relative;
   background-color: none;
 }
 #homepageBackground img {
-  width: 100vw;
+  width: 1000px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -286,12 +286,12 @@ position: relative;
   position: fixed;
 }
 #homepageBackground h1 {
-  top: 150px;
+  top: 300px;
   left: 5px;
 }
 #forecastBackground {
 width: 100vw;
-height: 1775px;
+height: 1900px;
 position: relative;
 background:linear-gradient(to right, #3498db, #1c2833); ;
 }
@@ -370,7 +370,7 @@ background:linear-gradient(to right, #3498db, #1c2833); ;
   width:75% !important; 
   position: relative !important;
   left: auto !important;
-  top: 125px !important;
+  top: -175px !important;
   margin-left:50px !important;
   margin-top:25px !important;
   z-index:-1 !important;
